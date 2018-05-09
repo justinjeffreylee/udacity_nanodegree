@@ -123,12 +123,14 @@ def load_data(city, month, day):
 
 def raw_data(df):
     '''Allows user to view raw data.'''
+    count = 0
+    print('\nThe data has been loaded and sorted.')
+    
     while True:
-        print('\nThe data has been loaded and sorted.')
         choice = input('Would you like to see a sample of the data?\n')
         if choice.lower()  == 'yes':
-            print('\nColumn Names                       Data Sample')
-            print(df.loc[random.choice(df.index)])
+            print(df[count : (count+5)])
+            count += 5
         else:     
             break
 
